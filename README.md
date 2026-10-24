@@ -1,100 +1,81 @@
-# Days Gone Multiplayer — Co-op Mod
+# Days Gone Multiplayer
 
-An unofficial, fan-made co-op mod for **Days Gone on PC**.
-
-**This repository is for releases, installation information and player feedback only. The development source code is not published here.**
-
-> [!IMPORTANT]
-> **Experimental / Early Alpha — 0.35.96, build 206, protocol 65.**
-> Expect desynchronization, FPS drops, freezes, crashes and unfinished story/revival cases.
-> Every player must use build 206. Earlier builds are incompatible with this protocol.
+I'm building this mod to play **Days Gone with friends**, with shared missions, combat and world interactions. It's free and still in **early alpha**.
 
 ## Download
 
-**[Release 0.35.96 — build 206](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/tag/v0.35.96-build206)**
+**0.35.96 · Build 206**
 
-- **[FULL ZIP — first installation](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.96-build206/DaysGoneCoop-0.35.96-build206.zip)**: includes the pinned UE4SS loader, required Microsoft x64 runtime, and English/French guides.
-- **[UPDATE ZIP — existing compatible installation](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.96-build206/DaysGoneCoop-0.35.96-build206-UPDATE.zip)**: mod-only update; preserves existing settings and loader configuration.
-- **[SHA-256 checksums](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.96-build206/SHA256SUMS-build206.txt)**.
+### [Download the full mod](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.96-build206/DaysGoneCoop-0.35.96-build206.zip)
 
-Use the release assets above. GitHub's automatically generated **“Source code”** archives contain this release repository's documentation, not the playable mod.
+**[Update an existing installation](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.96-build206/DaysGoneCoop-0.35.96-build206-UPDATE.zip)** · [Release notes](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/tag/v0.35.96-build206) · [Checksums](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.96-build206/SHA256SUMS-build206.txt)
 
-## Install — extract and play
+Use the **full ZIP** for your first installation. It includes the loader, required runtime and English/French guides. UPDATE needs the compatible loader already installed.
 
-1. Close Days Gone.
-2. In Steam, right-click **Days Gone → Manage → Browse local files**.
-3. Extract the **FULL ZIP contents directly into the game root**, the folder containing `BendGame`. Do not add an extra nested folder.
-4. Launch the game through Steam.
-5. Select **MULTIPLAYER** in the main menu or pause menu.
+GitHub's “Source code” archives are not the mod download.
 
-No installer, command prompt, SDK, compiler or separate loader download is needed.
+## Install
 
-**Already using mods?** Back up your existing loader and configuration first. The FULL ZIP is a fresh-install integration and cannot detect conflicts with another `dwmapi.dll` or UE4SS installation. Follow the included guide to merge compatible files; do not blindly overwrite another mod's loader. Use UPDATE only with our pinned loader installation. Back up valuable saves before testing.
+1. Close the game. In Steam, right-click **Days Gone → Manage → Browse local files**.
+2. Extract the **full ZIP contents into that folder**, alongside `BendGame`.
+3. Launch through Steam and select **MULTIPLAYER** in the main menu or pause menu.
 
-**Français :** fermez le jeu, extrayez le ZIP COMPLET dans la racine contenant `BendGame`, puis lancez par Steam et choisissez MULTIPLAYER. Le guide français détaillé est inclus dans le ZIP.
+No installer or separate loader download. Don't add an extra subfolder.
 
-## Requirements and connection
+**Requirements:** Windows x64, **Steam Days Gone 1.13 / build 19221447**. Everyone must use **build 206**. Other stores, game builds and Linux/Proton aren't validated.
 
-- A legitimate **Steam PC copy of Days Gone 1.13 / build 19221447** (AppID 1259420), on **Windows x64**.
-- Everyone uses the **same mod build: 206 / protocol 65**.
-- Other stores/builds, Linux/Proton and Steam Deck are not validated.
-- Designed for **2–4 players**; complete four-player gameplay coverage is still being validated.
+**Other mods installed?** Back up your loader and settings first. Follow the included compatibility guide before replacing an existing `dwmapi.dll` or UE4SS setup.
 
-**HOST DIRECT:** choose a save, create the session, then START GAME. Guests join by IP and port. Default **UDP 43919**; LAN and localhost are supported. UPnP attempts automatic router mapping, but router support, firewalls and CGNAT can still prevent Internet joins. Automatic LAN server discovery is not implemented yet.
+**Français :** extrayez le ZIP complet dans la racine contenant `BendGame`, puis lancez par Steam. Le guide français est inclus.
 
-**HOST WITH STEAM / JOIN STEAM LOBBY:** Steam lobbies and friend invitations are implemented. Players have used remote Steam sessions; the newest join fixes and reliable gameplay across different PCs still need validation. Direct hosting remains available.
+## What's synchronized?
 
-## What build 206 changes
+**✅ Synced / working · 🟡 In progress · ❌ Not yet**
 
-- Sends the host generator's fuel, running and repair state to guests through its native Blueprint restoration path.
-- Fixes the Blueprint function lookup implicated in guest job objective refresh exceptions.
-- Corrects the boolean-layout check that blocked mission HUD publication and affected shared interaction/state readers.
-- Keeps a failed generator restoration pending instead of recording a false application success.
+| Feature | Status | Current state |
+|---|---|---|
+| Player movement and appearance | ✅ Synced | Movement, rotation and selected character are shared. |
+| Multiplayer menu and session setup | ✅ Working | Host, choose a save, join and start together. |
+| Persistent co-op saves | ✅ Working | Separate campaigns with persistent autosaves. |
+| Missions, jobs and objectives | 🟡 In progress | Some objectives still require the host. New mission/HUD fixes need testing. |
+| NPC movement and animations | 🟡 In progress | Shared, but guests can still see stuttering or incorrect animations. |
+| Combat and damage | 🟡 In progress | Uses the game's damage system; guest combat still needs work. |
+| Doors, vehicle hoods and trunks | 🟡 In progress | Open/loot states are shared; recent fixes need more testing. |
+| Ground loot and destructibles | 🟡 In progress | False loot, missing effects and state mismatches can still happen. |
+| Generator: host → guest | 🟡 In progress | Added in 206. Fuel, running state and effects need an in-game check. |
+| Generator: guest → host | ❌ Not yet | Guest use isn't sent to the host yet. |
+| Motorcycles and passengers | 🟡 In progress | Shared movement and passenger systems; physics still needs work. |
+| Time and weather | 🟡 In progress | Time is shared. Weather transitions still need work. |
+| Cutscenes, tutorials and QTEs | 🟡 In progress | Some sequences and transitions can still get stuck. |
+| Teammate revival | 🟡 In progress | Prompts, getting up and story-related cases still need work. |
+| Audio, voices and effects | 🟡 In progress | Some can be missing, duplicated or keep playing. |
+| Automatic LAN server list | ❌ Not yet | Join by IP or Steam lobby for now. |
 
-**Generator interactions initiated by a guest are not forwarded to the host yet.** Native lights, particles, audio and mission/HUD results in this candidate still require in-game confirmation.
+**Performance is still a priority.** Some sessions have heavy FPS drops, freezes and desynchronization. The mod targets **2–4 players**, but full four-player gameplay is still being tested. Back up important saves before playing.
 
-## Current feature status
+## Play together
 
-| System | Actual status |
-|---|---|
-| Native multiplayer menu, host save selection and START | Available; previously confirmed by the owner. |
-| Persistent co-op campaigns and autosaves | Available; persistent autosaves previously confirmed by the owner. |
-| Missions, jobs, objective HUD and scripted interactions | Synchronization implemented; fixes included, with remaining scenario-specific problems. |
-| NPCs, combat, damage and animations | Implemented, with remaining animation, smoothness and performance problems. |
-| Doors, vehicle hoods/trunks, world loot and destructibles | Synchronization implemented; coverage and regressions still require testing. |
-| Generator state | Host → guest implemented in 206; guest → host operation remains open. |
-| Motorcycles, time/weather, cutscenes, QTEs and revival | Systems exist, but coverage and edge cases remain incomplete. |
+- **Steam:** choose **HOST WITH STEAM**, then invite friends or use **JOIN STEAM LOBBY**. Connection issues can still happen.
+- **Direct / LAN:** choose **HOST DIRECT**, select a save, then **START GAME**. Guests enter the host's IP and **UDP port 43919**. Localhost works too.
+- **Direct over the Internet:** UPnP attempts automatic port mapping. Some routers, firewalls and CGNAT setups still need another connection method or manual configuration.
 
-This is not a claim that every mission, enemy, animation, physics interaction or effect is synchronized perfectly.
+Co-op campaigns use their own folders under `Saved/MultiplayerSaves`. Return to the title menu for your personal saves. Global profiles and settings remain managed by the game.
 
-### Saves
+## Report a bug
 
-Co-op campaigns use `Saved/MultiplayerSaves/<campaign>/SaveGames`, separate from personal campaign saves. A copy of the host's selected save seeds a campaign. Guests load a campaign copy; return to the title menu to access personal saves again. Global player profiles/settings remain native. See the included EN/FR guides for manual saves and loading behavior.
+Tell me your version, whether you were hosting or joining, and what each player saw. Use `/bug description` in chat to mark the logs. Remove personal information and IP addresses before sharing them.
 
-### Verification and known limits
-
-Build 206 was compiled and installed on three local instances. **25/25 automated tests passed**, 27 runtime file hashes matched, and 194 save files were checked unchanged. These are build/deployment checks, not proof of native visuals, four-player gameplay, stable Internet play or 60 FPS.
-
-Known open areas include severe stutter/FPS drops in some sessions, NPC motion/animations, guest interaction authority, generator guest → host operation, and story/cutscene/QTE/revival/load edge cases. Build 206 is **not** advertised as resolving all earlier freeze, dead-NPC audio or corpse-loot reports.
-
-For a bug report, include the mod/game versions, host or guest role, steps and what each side saw. Use `/bug description` in chat to mark the telemetry. Remove personal information and IP addresses before sharing logs.
-
-## Development videos
+## Videos
 
 - [First multiplayer test](https://www.youtube.com/watch?v=WiVKn-ZAMDI)
 - [Chat, NPCs and networking update](https://www.youtube.com/watch?v=g3zG5G9H4ZQ)
 
-Videos show development progress; they are not a guarantee for every scenario in this release.
+## Credits and permissions
 
-## Credits, permissions and disclaimer
+Thanks to the **Days Gone modding community**, **UE4SS / UE4SS-RE, Narknon and contributors**, **ENet / Lee Salzman and contributors**, and **Microsoft**. Full credits and component licenses are included in the ZIP.
 
-Thanks to the **Days Gone modding community** for its tools, knowledge and testing.
+Free for personal, non-commercial use. Don't re-upload, repack, sell or convert the original mod to another game, or earn donations/Donation Points from redistributing it or its derivatives. Ask me before modifying or reusing original mod code/assets; gameplay settings changes are fine. Third-party licenses and rights provided by law remain unchanged.
 
-- **UE4SS / UE4SS-RE, Narknon and contributors** — pinned MIT-licensed loader and its own injection proxy.
-- **ENet / Lee Salzman and contributors** — MIT-licensed networking library.
-- **Microsoft** — separately licensed Visual C++ runtime.
-- Full acknowledgements, component licenses and permissions are included under `DaysGoneCoop-docs` in the ZIP.
+Unofficial fan project, not affiliated with Sony Interactive Entertainment or Bend Studio. Days Gone belongs to its respective rights holders. A legitimate game copy is required.
 
-**© 2026 Mod authors. All rights reserved for original mod content.** Free personal, non-commercial use is allowed. Do not re-upload, mirror, repack, sell or convert the original mod to another game. Modification or reuse of original code/assets requires prior permission; normal settings changes are allowed. Do not earn donations or Donation Points from redistribution or derivatives using the original content. These conditions do not override third-party licenses or rights provided by law.
-
-Unofficial fan project; not affiliated with or endorsed by **Sony Interactive Entertainment** or **Bend Studio**. Days Gone and its related intellectual property belong to their respective rights holders. A legitimate copy of the base game is required.
+**This repository is only for releases and their documentation.**
