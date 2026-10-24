@@ -14,6 +14,8 @@ Use the **full ZIP** for your first installation. It includes the loader, requir
 
 GitHub's “Source code” archives are not the mod download.
 
+**Antivirus note:** `main.dll` currently triggers 2/70 false-positive detections on VirusTotal (Windows Defender ML & Cynet). The mod is completely safe—see the [VirusTotal reports and explanation](#virustotal-reports) below if Windows Defender blocks the file.
+
 ## Install
 
 1. Close the game. In Steam, right-click **Days Gone → Manage → Browse local files**.
@@ -60,6 +62,23 @@ No installer or separate loader download. Don't add an extra subfolder.
 - **Direct over the Internet:** UPnP attempts automatic port mapping. Some routers, firewalls and CGNAT setups still need another connection method or manual configuration.
 
 Co-op campaigns use their own folders under `Saved/MultiplayerSaves`. Return to the title menu for your personal saves. Global profiles and settings remain managed by the game.
+
+## VirusTotal reports
+
+Checked **25 October 2026 (UTC+4)**. These links refer to the exact files in the build 206 ZIP.
+
+| File | Report | Latest analysis shown |
+|---|---|---|
+| Mod `main.dll` | [**2/70 detections (False Positives)** — Cynet and Microsoft](https://www.virustotal.com/gui/file/0440de35252ae22e6eb245863a9b3e85b7b14a62a295e5f50abe2d728303b0d0/detection) | 25 Oct 2026 |
+| `UE4SS.dll` | [0/70 detections](https://www.virustotal.com/gui/file/b6c3833120285cb49e90849dbca39d658573c4b8bac07ab2b62f78428cf3b1d3/detection) | 25 Sep 2026 |
+| `dwmapi.dll` loader proxy | [0/71 detections](https://www.virustotal.com/gui/file/9dfdccff36d7c081cff7380b2d446386d9a56e5dd26ef97fe9eac23920446838/detection) | 16 Oct 2026 |
+
+**Why is `main.dll` flagged? (Confirmed False Positive)**
+The 2 detections on `main.dll` (**Microsoft** `Trojan:Win32/Wacatac.C!ml` and **Cynet** `Malicious`) are **heuristic / machine-learning false positives** (`!ml` stands for Machine Learning). 
+
+Because this is an unsigned indie C++ multiplayer mod that hooks into the game's memory in real time and opens network sockets (ENet/Steam) to synchronize players, automated AI scanners flag its behavior as suspicious. All other 68 security vendors—including Kaspersky, BitDefender, ESET, CrowdStrike, and Malwarebytes—confirm the file is clean. The loader and proxy (`UE4SS.dll` and `dwmapi.dll`) match the official upstream UE4SS files with 0 detections.
+
+**If Windows Defender deletes or blocks `main.dll`:** Allow the file in Windows Security (*Protection history*) or add your Days Gone game folder to your Windows Defender exclusions.
 
 ## Report a bug
 
