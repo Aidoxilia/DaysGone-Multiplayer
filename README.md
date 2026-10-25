@@ -4,17 +4,17 @@ I'm building this mod to play **Days Gone with friends**, with shared missions, 
 
 ## Download
 
-**0.35.96 · Build 206**
+**0.35.102 · Build 212**
 
-### [Download the full mod](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.96-build206/DaysGoneCoop-0.35.96-build206.zip)
+### [Download the full mod](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.102-build212/DaysGoneCoop-0.35.102-build212.zip)
 
-**[Update an existing installation](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.96-build206/DaysGoneCoop-0.35.96-build206-UPDATE.zip)** · [Release notes](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/tag/v0.35.96-build206) · [Checksums](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.96-build206/SHA256SUMS-build206.txt)
+**[Update an existing installation](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.102-build212/DaysGoneCoop-0.35.102-build212-UPDATE.zip)** · [Release notes](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/tag/v0.35.102-build212) · [Checksums](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.102-build212/SHA256SUMS-build212.txt)
 
 Use the **full ZIP** for your first installation. It includes the loader, required runtime and English/French guides. UPDATE needs the compatible loader already installed.
 
 GitHub's “Source code” archives are not the mod download.
 
-**Antivirus note:** `main.dll` currently triggers 2/70 false-positive detections on VirusTotal (Windows Defender ML & Cynet). The mod is completely safe—see the [VirusTotal reports and explanation](#virustotal-reports) below if Windows Defender blocks the file.
+**Antivirus reports:** the reports linked below are for the older build 206. Build 212 contains a new `main.dll`; those scan results do not describe this new binary.
 
 ## Install
 
@@ -24,7 +24,7 @@ GitHub's “Source code” archives are not the mod download.
 
 No installer or separate loader download. Don't add an extra subfolder.
 
-**Requirements:** Windows x64, **Steam Days Gone 1.13 / build 19221447**. Everyone must use **build 206**. Other stores, game builds and Linux/Proton aren't validated.
+**Requirements:** Windows x64, **Steam Days Gone 1.13 / build 19221447**. Everyone must use **build 212**. Other stores, game builds and Linux/Proton aren't validated.
 
 **Other mods installed?** Back up your loader and settings first. Follow the included compatibility guide before replacing an existing `dwmapi.dll` or UE4SS setup.
 
@@ -44,8 +44,8 @@ No installer or separate loader download. Don't add an extra subfolder.
 | Combat and damage | 🟡 In progress | Uses the game's damage system; guest combat still needs work. |
 | Doors, vehicle hoods and trunks | 🟡 In progress | Open/loot states are shared; recent fixes need more testing. |
 | Ground loot and destructibles | 🟡 In progress | False loot, missing effects and state mismatches can still happen. |
-| Generator: host → guest | 🟡 In progress | Added in 206. Fuel, running state and effects need an in-game check. |
-| Generator: guest → host | ❌ Not yet | Guest use isn't sent to the host yet. |
+| Generators | 🟡 In progress | On/off works both ways in earlier tests. Guest refuelling is now forwarded; the latest changes need testing. |
+| Resource sharing | 🟡 In progress | Press L to share crafting resources. Native pickup added in 212; /drop and /take remain available. |
 | Motorcycles and passengers | 🟡 In progress | Shared movement and passenger systems; physics still needs work. |
 | Time and weather | 🟡 In progress | Time is shared. Weather transitions still need work. |
 | Cutscenes, tutorials and QTEs | 🟡 In progress | Some sequences and transitions can still get stuck. |
@@ -55,6 +55,15 @@ No installer or separate loader download. Don't add an extra subfolder.
 
 **Performance is still a priority.** Some sessions have heavy FPS drops, freezes and desynchronization. The mod targets **2–4 players**, but full four-player gameplay is still being tested. Back up important saves before playing.
 
+## New in build 212
+
+- Cached object searches to reduce the periodic stalls and slow-motion effect reported even at a good FPS count.
+- Native interaction-key pickup for shared crafting resources, with host arbitration. The **L** share panel and chat commands remain available.
+- Visibility repair and diagnostics for dropped beer resources.
+- Includes the join-recovery, guest generator-refuelling, mission-marker and already-open hood fixes added since 206.
+
+The newest fixes are compiled and installed, but still need in-game testing. Everyone must update to **212 / protocol 66**.
+
 ## Play together
 
 - **Steam:** choose **HOST WITH STEAM**, then invite friends or use **JOIN STEAM LOBBY**. Connection issues can still happen.
@@ -63,9 +72,11 @@ No installer or separate loader download. Don't add an extra subfolder.
 
 Co-op campaigns use their own folders under `Saved/MultiplayerSaves`. Return to the title menu for your personal saves. Global profiles and settings remain managed by the game.
 
-## VirusTotal reports
+## VirusTotal reports — previous build 206
 
-Checked **25 October 2026 (UTC+4)**. These links refer to the exact files in the build 206 ZIP.
+Checked **25 October 2026 (UTC+4)** for **build 206**. The `main.dll` report below is historical; it does not scan the new build 212 DLL. The bundled UE4SS loader and proxy are unchanged.
+
+Build 212 public `main.dll` SHA-256: `94851017E70DC3A8B61D4D998282D0FFA73441C63FA60D2577D1B639AC464AA4`.
 
 | File | Report | Latest analysis shown |
 |---|---|---|
