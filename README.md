@@ -4,17 +4,17 @@ I'm building this mod to play **Days Gone with friends**, with shared missions, 
 
 ## Download
 
-**0.35.104 · Build 214**
+**0.35.105 · Build 215**
 
-### [Download the full mod](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.104-build214/DaysGoneCoop-0.35.104-build214.zip)
+### [Download the full mod](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.105-build215/DaysGoneCoop-0.35.105-build215.zip)
 
-**[Update an existing installation](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.104-build214/DaysGoneCoop-0.35.104-build214-UPDATE.zip)** · [Release notes](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/tag/v0.35.104-build214) · [Checksums](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.104-build214/SHA256SUMS-build214.txt)
+**[Update an existing installation](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.105-build215/DaysGoneCoop-0.35.105-build215-UPDATE.zip)** · [Release notes](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/tag/v0.35.105-build215) · [Checksums](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.105-build215/SHA256SUMS-build215.txt)
 
 Use the **full ZIP** for your first installation. It includes the loader, required runtime and English/French guides. UPDATE needs the compatible loader already installed.
 
 GitHub's “Source code” archives are not the mod download.
 
-**Antivirus reports:** the reports linked below are for the older build 206. Build 214 contains a new `main.dll`; those scan results do not describe this new binary.
+**Antivirus reports:** the reports linked below are for the older build 206. Build 215 contains a new `main.dll`; those scan results do not describe this new binary.
 
 ## Install
 
@@ -26,7 +26,7 @@ GitHub's “Source code” archives are not the mod download.
 
 No installer or separate loader download. Don't add an extra subfolder.
 
-**Requirements:** Windows x64, **Steam Days Gone 1.13 / build 19221447**. Everyone must use **build 214**. Other stores, game builds and Linux/Proton aren't validated.
+**Requirements:** Windows x64, **Steam Days Gone 1.13 / build 19221447**. Everyone must use **build 215**. Other stores, game builds and Linux/Proton aren't validated.
 
 **Other mods installed?** Back up your loader and settings first. Follow the included compatibility guide before replacing an existing `dwmapi.dll` or UE4SS setup.
 
@@ -50,7 +50,7 @@ No installer or separate loader download. Don't add an extra subfolder.
 
 | NPC movement and animations | 🟡 In progress | Shared, but guests can still see stuttering or incorrect animations. |
 
-| Combat and damage | 🟡 In progress | Uses the game's damage system; guest combat still needs work. |
+| Combat and damage | 🟡 In progress | Native damage, faster guest enemy-death presentation and red kill feedback. Aim assist remains under investigation. |
 
 | Doors, vehicle hoods and trunks | 🟡 In progress | Open/loot states are shared; recent fixes need more testing. |
 
@@ -58,7 +58,7 @@ No installer or separate loader download. Don't add an extra subfolder.
 
 | Generators | 🟡 In progress | On/off works both ways in earlier tests. Guest refuelling and power-button actions are forwarded; latest mission effects need testing. |
 
-| Resource sharing | 🟡 In progress | Press L to share crafting resources. Native pickup added in 212; /drop and /take remain available. |
+| Resource sharing | ✅ Working | Crafting-resource sharing and native pickup worked in the latest 214 test. Press L, or use /drop and /take. |
 
 | Motorcycles and passengers | 🟡 In progress | Shared movement and passenger systems; physics still needs work. |
 
@@ -66,7 +66,7 @@ No installer or separate loader download. Don't add an extra subfolder.
 
 | Cutscenes, tutorials and QTEs | 🟡 In progress | Some sequences and transitions can still get stuck. |
 
-| Teammate revival | 🟡 In progress | Prompts, getting up and story-related cases still need work. |
+| Teammate revival | 🟡 In progress | Hold continuity and ground-checked recovery improved in 215; latest native behavior still needs testing. |
 
 | Audio, voices and effects | 🟡 In progress | Some can be missing, duplicated or keep playing. |
 
@@ -74,15 +74,16 @@ No installer or separate loader download. Don't add an extra subfolder.
 
 **Performance is still a priority.** Some sessions have heavy FPS drops, freezes and desynchronization. The mod targets **2–4 players**, but full four-player gameplay is still being tested. Back up important saves before playing.
 
-## New in build 214
+## New in build 215
 
-- Fix native resource-pickup arbitration so the host can resolve competing claims.
-- Relay guest generator power actions through the host's native interaction, including the path used by mission events.
-- Restore the **MULTIPLAYER** entry in the pause menu.
-- Add bounded recovery and diagnostics for the player remaining invisible to themselves after a NERO injector.
+- Faster guest-side enemy death presentation, following the host's confirmed health/death state after a 120 ms grace period. Paired melee finishers retain their timing.
+- Native red crosshair feedback for credited guest firearm kills.
+- Revive holds tolerate brief interruptions; repeated failed respawns can fall back to getting up in place when safe ground is verified.
+- Guest generator actions are captured through both native completion paths that change its state.
+- Additional aim-assist flags and diagnostics. Auto-aim is still under investigation.
 
-Everyone must update to **214 / protocol 67**. Builds 213 and earlier cannot join this release.
-The fixes pass offline tests; their latest native behavior still needs in-game testing.
+Includes the earlier loading and hidden-player recovery protections. Latest native changes still need in-game confirmation.
+**Everyone needs build 215 / protocol 68. Earlier builds cannot join.**
 
 ## Play together
 
@@ -96,9 +97,9 @@ Co-op campaigns use their own folders under `Saved/MultiplayerSaves`. Return to 
 
 ## VirusTotal reports — previous build 206
 
-Checked **25 October 2026 (UTC+4)** for **build 206**. The `main.dll` report below is historical; it does not scan the new build 214 DLL. The bundled UE4SS loader and proxy are unchanged.
+Checked **25 October 2026 (UTC+4)** for **build 206**. The `main.dll` report below is historical; it does not scan the new build 215 DLL. The bundled UE4SS loader and proxy are unchanged.
 
-Build 214 public `main.dll` SHA-256: `14F888824C454212EE568409F194446BF88D47CCC25B26FDAB46E7234E3BEEAA`.
+Build 215 public `main.dll` SHA-256: `0557A8F4D54EE5A1807CA1CA28FE815D5CA1D62D48B0703F9F7434E91CF9F1F7`.
 
 | File | Report | Latest analysis shown |
 
