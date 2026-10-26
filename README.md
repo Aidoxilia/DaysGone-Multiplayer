@@ -4,17 +4,17 @@ I'm building this mod to play **Days Gone with friends**, with shared missions, 
 
 ## Download
 
-**0.35.103 · Build 213**
+**0.35.104 · Build 214**
 
-### [Download the full mod](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.103-build213/DaysGoneCoop-0.35.103-build213.zip)
+### [Download the full mod](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.104-build214/DaysGoneCoop-0.35.104-build214.zip)
 
-**[Update an existing installation](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.103-build213/DaysGoneCoop-0.35.103-build213-UPDATE.zip)** · [Release notes](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/tag/v0.35.103-build213) · [Checksums](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.103-build213/SHA256SUMS-build213.txt)
+**[Update an existing installation](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.104-build214/DaysGoneCoop-0.35.104-build214-UPDATE.zip)** · [Release notes](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/tag/v0.35.104-build214) · [Checksums](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.104-build214/SHA256SUMS-build214.txt)
 
 Use the **full ZIP** for your first installation. It includes the loader, required runtime and English/French guides. UPDATE needs the compatible loader already installed.
 
 GitHub's “Source code” archives are not the mod download.
 
-**Antivirus reports:** the reports linked below are for the older build 206. Build 213 contains a new `main.dll`; those scan results do not describe this new binary.
+**Antivirus reports:** the reports linked below are for the older build 206. Build 214 contains a new `main.dll`; those scan results do not describe this new binary.
 
 ## Install
 
@@ -26,7 +26,7 @@ GitHub's “Source code” archives are not the mod download.
 
 No installer or separate loader download. Don't add an extra subfolder.
 
-**Requirements:** Windows x64, **Steam Days Gone 1.13 / build 19221447**. Everyone must use **build 213**. Other stores, game builds and Linux/Proton aren't validated.
+**Requirements:** Windows x64, **Steam Days Gone 1.13 / build 19221447**. Everyone must use **build 214**. Other stores, game builds and Linux/Proton aren't validated.
 
 **Other mods installed?** Back up your loader and settings first. Follow the included compatibility guide before replacing an existing `dwmapi.dll` or UE4SS setup.
 
@@ -56,7 +56,7 @@ No installer or separate loader download. Don't add an extra subfolder.
 
 | Ground loot and destructibles | 🟡 In progress | False loot, missing effects and state mismatches can still happen. |
 
-| Generators | 🟡 In progress | On/off works both ways in earlier tests. Guest refuelling is now forwarded; the latest changes need testing. |
+| Generators | 🟡 In progress | On/off works both ways in earlier tests. Guest refuelling and power-button actions are forwarded; latest mission effects need testing. |
 
 | Resource sharing | 🟡 In progress | Press L to share crafting resources. Native pickup added in 212; /drop and /take remain available. |
 
@@ -74,14 +74,15 @@ No installer or separate loader download. Don't add an extra subfolder.
 
 **Performance is still a priority.** Some sessions have heavy FPS drops, freezes and desynchronization. The mod targets **2–4 players**, but full four-player gameplay is still being tested. Back up important saves before playing.
 
-## New in build 213
+## New in build 214
 
-- Loading no longer hands input focus back to the title widget while the co-op save is starting or loading.
-- Bounded recovery handles a title state that remains active after loading, which could leave the host in slow motion and prevent the session opening.
-- Targeted diagnostics track title-screen and time-dilation transitions for troubleshooting.
-- Includes the resource-sharing panel, native pickup, object-search caching and previous join/generator/mission-marker fixes.
+- Fix native resource-pickup arbitration so the host can resolve competing claims.
+- Relay guest generator power actions through the host's native interaction, including the path used by mission events.
+- Restore the **MULTIPLAYER** entry in the pause menu.
+- Add bounded recovery and diagnostics for the player remaining invisible to themselves after a NERO injector.
 
-Everyone must update to **213 / protocol 66**. The loading protections pass offline tests; the latest changes still need an in-game check.
+Everyone must update to **214 / protocol 67**. Builds 213 and earlier cannot join this release.
+The fixes pass offline tests; their latest native behavior still needs in-game testing.
 
 ## Play together
 
@@ -95,9 +96,9 @@ Co-op campaigns use their own folders under `Saved/MultiplayerSaves`. Return to 
 
 ## VirusTotal reports — previous build 206
 
-Checked **25 October 2026 (UTC+4)** for **build 206**. The `main.dll` report below is historical; it does not scan the new build 213 DLL. The bundled UE4SS loader and proxy are unchanged.
+Checked **25 October 2026 (UTC+4)** for **build 206**. The `main.dll` report below is historical; it does not scan the new build 214 DLL. The bundled UE4SS loader and proxy are unchanged.
 
-Build 213 public `main.dll` SHA-256: `C8DF9D01B44DFCFE959E803A933F0D5552394E4B22DBB207AEF274ACBA51FECE`.
+Build 214 public `main.dll` SHA-256: `14F888824C454212EE568409F194446BF88D47CCC25B26FDAB46E7234E3BEEAA`.
 
 | File | Report | Latest analysis shown |
 
