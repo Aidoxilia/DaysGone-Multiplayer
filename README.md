@@ -4,17 +4,17 @@ I'm building this mod to play **Days Gone with friends**, with shared missions, 
 
 ## Download
 
-**0.35.105 · Build 215**
+**0.35.107 · Build 217**
 
-### [Download the full mod](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.105-build215/DaysGoneCoop-0.35.105-build215.zip)
+### [Download the full mod](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.107-build217/DaysGoneCoop-0.35.107-build217.zip)
 
-**[Update an existing installation](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.105-build215/DaysGoneCoop-0.35.105-build215-UPDATE.zip)** · [Release notes](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/tag/v0.35.105-build215) · [Checksums](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.105-build215/SHA256SUMS-build215.txt)
+**[Update an existing installation](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.107-build217/DaysGoneCoop-0.35.107-build217-UPDATE.zip)** · [Release notes](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/tag/v0.35.107-build217) · [Checksums](https://github.com/Aidoxilia/DaysGone-Multiplayer/releases/download/v0.35.107-build217/SHA256SUMS-build217.txt)
 
 Use the **full ZIP** for your first installation. It includes the loader, required runtime and English/French guides. UPDATE needs the compatible loader already installed.
 
 GitHub's “Source code” archives are not the mod download.
 
-**Antivirus reports:** the reports linked below are for the older build 206. Build 215 contains a new `main.dll`; those scan results do not describe this new binary.
+**Antivirus reports:** the reports linked below are for the older build 206. Build 217 contains a new `main.dll`; those scan results do not describe this new binary.
 
 ## Install
 
@@ -26,7 +26,7 @@ GitHub's “Source code” archives are not the mod download.
 
 No installer or separate loader download. Don't add an extra subfolder.
 
-**Requirements:** Windows x64, **Steam Days Gone 1.13 / build 19221447**. Everyone must use **build 215**. Other stores, game builds and Linux/Proton aren't validated.
+**Requirements:** Windows x64, **Steam Days Gone 1.13 / build 19221447**. Everyone must use **build 217**. Other stores, game builds and Linux/Proton aren't validated.
 
 **Other mods installed?** Back up your loader and settings first. Follow the included compatibility guide before replacing an existing `dwmapi.dll` or UE4SS setup.
 
@@ -42,9 +42,9 @@ No installer or separate loader download. Don't add an extra subfolder.
 
 | Player movement and appearance | ✅ Synced | Movement, rotation and selected character are shared. |
 
-| Multiplayer menu and session setup | ✅ Working | Host, choose a save, join and start together. |
+| Multiplayer menu and session setup | ✅ Working | Host, choose a save, join and start together; updated lobby and chat. |
 
-| Persistent co-op saves | ✅ Working | Separate campaigns with persistent autosaves. |
+| Persistent co-op saves | ✅ Working | Separate campaigns with persistent autosaves and an updated save catalogue. |
 
 | Missions, jobs and objectives | 🟡 In progress | Some objectives still require the host. New mission/HUD fixes need testing. |
 
@@ -74,16 +74,17 @@ No installer or separate loader download. Don't add an extra subfolder.
 
 **Performance is still a priority.** Some sessions have heavy FPS drops, freezes and desynchronization. The mod targets **2–4 players**, but full four-player gameplay is still being tested. Back up important saves before playing.
 
-## New in build 215
+## New in build 217
 
-- Faster guest-side enemy death presentation, following the host's confirmed health/death state after a 120 ms grace period. Paired melee finishers retain their timing.
-- Native red crosshair feedback for credited guest firearm kills.
-- Revive holds tolerate brief interruptions; repeated failed respawns can fall back to getting up in place when safe ground is verified.
-- Guest generator actions are captured through both native completion paths that change its state.
-- Additional aim-assist flags and diagnostics. Auto-aim is still under investigation.
+- A redesigned chat with colored player names, wrapped messages, a character counter and a fading message feed.
+- An updated Survivors Lobby with improved fields and a paged, filterable session list.
+- A clearer co-op save catalogue with save pictures, mission details, players and story progress.
+- Load another co-op save during a session. Guests follow the host to the new shared campaign.
+- Solo saves create or reuse a separate co-op copy. The original solo save is kept.
+- The save list shows the latest solo autosave and reduces duplicate entries; the game's autosave frequency is unchanged.
+- The owner confirmed these changes in game. Other mission, visibility and NPC/combat edge cases are still being improved.
 
-Includes the earlier loading and hidden-player recovery protections. Latest native changes still need in-game confirmation.
-**Everyone needs build 215 / protocol 68. Earlier builds cannot join.**
+**Everyone needs build 217 / protocol 68. Earlier builds cannot join.**
 
 ## Play together
 
@@ -97,9 +98,9 @@ Co-op campaigns use their own folders under `Saved/MultiplayerSaves`. Return to 
 
 ## VirusTotal reports — previous build 206
 
-Checked **25 October 2026 (UTC+4)** for **build 206**. The `main.dll` report below is historical; it does not scan the new build 215 DLL. The bundled UE4SS loader and proxy are unchanged.
+Checked **25 October 2026 (UTC+4)** for **build 206**. The `main.dll` report below is historical; it does not scan the new build 217 DLL. The bundled UE4SS loader and proxy are unchanged.
 
-Build 215 public `main.dll` SHA-256: `0557A8F4D54EE5A1807CA1CA28FE815D5CA1D62D48B0703F9F7434E91CF9F1F7`.
+Build 217 public `main.dll` SHA-256: `70A2439C5473FE82A89E38F4FBFBD68DB817DC010CFDFBA0793580395B5980DD`.
 
 | File | Report | Latest analysis shown |
 
